@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biotecnologia Vermelha</title>
+  <style>
+    :root {
+      --bg: #fff;
+      --text: #333;
+      --accent: #d32f2f;
+    }
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --accent: #ff5252;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.5s, color 0.5s;
+    }
+    header {
+      background: linear-gradient(90deg, var(--accent), #f44336);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.3s;
+    }
+    nav a:hover {
+      opacity: 0.7;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 30px auto;
+      background: var(--bg);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+    h2 {
+      color: var(--accent);
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #f44336;
+    }
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .score {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+    #topo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Biotecnologia Vermelha</h1>
+  <nav>
+    <a href="#caracteristicas">Características</a>
+    <a href="#exemplos">Exemplos</a>
+    <a href="#curiosidades">Curiosidades</a>
+    <a href="#importancia">Importância</a>
+    <a href="#riscos">Riscos</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
+</header>
+
+<section id="caracteristicas">
+  <h2>Características</h2>
+  <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/dna-1974677_960_720.jpg" alt="DNA">
+  <p>Aplicação da biotecnologia na saúde: desenvolvimento de medicamentos, vacinas, terapias e diagnósticos inovadores.</p>
+</section>
+
+<section id="exemplos">
+  <h2>Exemplos</h2>
+  <img src="https://cdn.pixabay.com/photo/2020/05/14/14/28/vaccine-5173200_960_720.jpg" alt="Vacina">
+  <ul>
+    <li>Produção de insulina sintética.</li>
+    <li>Vacinas de RNA como a da COVID-19.</li>
+    <li>Terapias gênicas e com células-tronco.</li>
+    <li>Testes como PCR.</li>
+  </ul>
+</section>
+
+<section id="curiosidades">
+  <h2>Curiosidades</h2>
+  <img src="https://cdn.pixabay.com/photo/2017/07/12/17/25/syringe-2497391_960_720.jpg" alt="Seringa">
+  <ul>
+    <li>Chamada "vermelha" por estar ligada à saúde e ao sangue.</li>
+    <li>Ajuda no tratamento de doenças raras.</li>
+    <li>Evolui junto com os avanços genéticos.</li>
+  </ul>
+</section>
+
+<section id="importancia">
+  <h2>Importância</h2>
+  <img src="https://cdn.pixabay.com/photo/2017/06/29/00/16/hospital-2451039_960_720.jpg" alt="Hospital">
+  <p>Essencial para salvar vidas, melhorar tratamentos e prevenir doenças, aumentando a qualidade e expectativa de vida.</p>
+</section>
+
+<section id="riscos">
+  <h2>O que pode prejudicar?</h2>
+  <img src="https://cdn.pixabay.com/photo/2020/03/12/08/44/microscope-4923117_960_720.jpg" alt="Microscópio">
+  <ul>
+    <li>Questões éticas sobre manipulação genética.</li>
+    <li>Riscos de efeitos colaterais.</li>
+    <li>Uso irresponsável de tecnologias biomédicas.</li>
+  </ul>
+</section>
+
+<section id="quiz">
+  <h2>Quiz Interativo</h2>
+  <p>Responda e veja sua pontuação!</p>
+  <div class="quiz">
+    <div class="question">
+      <p>1. Biotecnologia Vermelha é aplicada na:</p>
+      <button onclick="responder(this, true)">Saúde</button>
+      <button onclick="responder(this, false)">Agricultura</button>
+      <div class="feedback"></div>
+    </div>
+    <div class="question">
+      <p>2. Exemplo de Biotecnologia Vermelha:</p>
+      <button onclick="responder(this, true)">Produção de vacinas</button>
+      <button onclick="responder(this, false)">Pesticidas</button>
+      <div class="feedback"></div>
+    </div>
+    <div class="question">
+      <p>3. Um risco é:</p>
+      <button onclick="responder(this, true)">Problemas éticos</button>
+      <button onclick="responder(this, false)">Seca</button>
+      <div class="feedback"></div>
+    </div>
+  </div>
+  <div class="score"></div>
+</section>
+
+<button id="topo" onclick="scrollToTop()">↑</button>
+
+<audio id="acerto" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+<audio id="erro" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+
+<script>
+  let score = 0;
+  let totalQuestions = 3;
+  let answered = 0;
+
+  function responder(button, correto) {
+    const feedback = button.parentElement.querySelector('.feedback');
+    if (feedback.textContent !== '') return;
+
+    if (correto) {
+      document.getElementById('acerto').play();
+      feedback.textContent = '✅ Correto!';
+      feedback.style.color = 'green';
+      score++;
+    } else {
+      document.getElementById('erro').play();
+      feedback.textContent = '❌ Errado!';
+      feedback.style.color = 'red';
+    }
+
+    answered++;
+    if (answered === totalQuestions) mostrarPontuacao();
+  }
+
+  function mostrarPontuacao() {
+    const scoreDiv = document.querySelector('.score');
+    scoreDiv.innerHTML = `Você acertou <strong>${score}</strong> de ${totalQuestions} perguntas!`;
+    scoreDiv.style.color = 'blue';
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Modo noturno automático
+  const hora = new Date().getHours();
+  if (hora >= 18 || hora <= 6) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  // Animação ao scroll
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>
